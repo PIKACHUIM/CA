@@ -1,0 +1,5 @@
+rewrite /(.*)(FakeCA|Import)\.zip /$1$2Cert.zip break;
+rewrite /(.*)(CA|CA-RSA)\.zip /$1CA-ALLCERT.zip break;
+rewrite /(.*)(CA|CA-RSA)\.(.*) /$1CA-RSA4096.$3 break;
+rewrite /(.*)-RSA\.(.*) /$1-RSA4096.$2 break;
+rewrite /CA\.(cer|crt|der|p7b) /CA-RSA4096.$2 break;
