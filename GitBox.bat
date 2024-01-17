@@ -106,6 +106,7 @@ echo.
 set /p adr=请输入地址:
 git clone %adr%
 timeout /t 5  >nul
+chcp 963 > nul
 goto LABEL_SUCC
 REM ###############################################################
 
@@ -130,6 +131,7 @@ echo.
 set /p yhm=请输入姓名:
 git config --global user.name  %yhm%
 timeout /t 2  >nul
+chcp 963 > nul
 goto LABEL_SUCC
 REM ###############################################################
 
@@ -148,6 +150,7 @@ echo             ▇                                ▇
 echo             ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇
 git pull || git checkout
 timeout /t 5   >nul
+chcp 963 > nul
 goto LABEL_SUCC
 REM ###############################################################
 
@@ -169,7 +172,9 @@ git commit -m "Updated"%date:~0,4%%date:~5,2%%date:~8,2%%time:~0,2%%time:~3,2%%t
 git push
 git push remote
 git push origin
+chcp 963 > nul
 timeout /t 5   >nul
+chcp 963 > nul
 goto LABEL_SUCC
 REM ###############################################################
 
@@ -219,6 +224,7 @@ if %MsHtaReturnValue% == 1 (
     git reset --hard origin/master
     git pull
     timeout /t 5 >nul
+    chcp 963 > nul
     goto LABEL_SUCC
 ) else (
     cls
@@ -235,6 +241,7 @@ if %MsHtaReturnValue% == 1 (
     echo.
     echo -------------------用户放弃同步，同步中止-------------------
     timeout /t 9  >nul
+    chcp 963 > nul
     goto LABEL_MENU
 )
 goto LABEL_SUCC
@@ -293,6 +300,7 @@ if %MsHtaReturnValue% == 1 (
     git add .
     git commit -m "Updated"%date:~0,4%%date:~5,2%%date:~8,2%%time:~0,2%%time:~3,2%%time:~6,2%
     git push -f
+    chcp 963 > nul
     timeout /t 9 >nul
     goto LABEL_SUCC
 ) else (
@@ -310,8 +318,10 @@ if %MsHtaReturnValue% == 1 (
     echo.
     echo -------------------用户放弃同步，同步中止-------------------
     timeout /t 3  >nul
+    chcp 963 > nul
     goto LABEL_MENU
 )
+chcp 963 > nul
 goto LABEL_SUCC
 REM ###############################################################
 
@@ -380,6 +390,7 @@ if %MsHtaReturnValue% == 1 (
     git branch -m master
     git push -f
 	timeout /t 9   >nul
+    chcp 963 > nul
     goto LABEL_SUCC
 ) else (
     cls
@@ -396,8 +407,10 @@ if %MsHtaReturnValue% == 1 (
     echo.
     echo -------------------用户放弃丢弃，同步中止-------------------
     timeout /t 3  >nul
+    chcp 963 > nul
     goto LABEL_MENU
 )
+chcp 963 > nul
 goto LABEL_SUCC
 REM ###############################################################
 
@@ -427,6 +440,7 @@ timeout /t 5  >nul
 git checkout -b %mbh%
 git pull
 timeout /t 5  >nul
+chcp 963 > nul
 goto LABEL_SUCC
 REM ###############################################################
 
@@ -460,6 +474,7 @@ timeout /t 5  >nul
 git checkout -b %mbh% origin/%mbh%
 git pull
 timeout /t 5  >nul
+chcp 963 > nul
 goto LABEL_SUCC
 REM ###############################################################
 
@@ -521,8 +536,10 @@ if %okk%==YES (
 ) else if %okk%==Yes (
   goto LABEL_MERG
 ) else if %okk%==yes (
+  chcp 963 > nul
   goto LABEL_MERG
 ) else (
+  chcp 963 > nul
   goto LABEL_MENU
 )
 
@@ -537,6 +554,7 @@ git checkout %fz2%
 git merge --no-ff -m "分支合并于"%date:~0,4%%date:~5,2%%date:~8,2%%time:~0,2%%time:~3,2%%time:~6,2% %fz1%
 echo. 
 timeout /t 999
+chcp 963 > nul
 goto LABEL_SUCC
 REM ###############################################################
 
@@ -557,6 +575,7 @@ echo.
 set /p adrs=请输入地址（git@xxxxx.git）:
 git remote add remote %adrs%
 timeout /t 5  >nul
+chcp 963 > nul
 goto LABEL_SUCC
 REM ###############################################################
 
@@ -590,5 +609,6 @@ echo.
 echo.
 echo.
 timeout /t 2  >nul
+chcp 963 > nul
 goto LABEL_MENU
 REM ###############################################################
