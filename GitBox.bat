@@ -3,6 +3,7 @@ color 3f
 title Git¹¤¾ß
 mode con lines=42 cols=60
 :LABEL_MENU
+chcp 963 > nul
 cls
 color 3f
 echo.
@@ -166,7 +167,8 @@ echo             ¨~¨~¨~¨~¨~¨~¨~¨~¨~¨~¨~¨~¨~¨~¨~¨~¨~¨~
 git add .
 git commit -m "Updated"%date:~0,4%%date:~5,2%%date:~8,2%%time:~0,2%%time:~3,2%%time:~6,2%
 git push
-git push -u remote
+git push remote
+git push origin
 timeout /t 5   >nul
 goto LABEL_SUCC
 REM ###############################################################
